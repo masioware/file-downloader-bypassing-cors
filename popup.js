@@ -35,6 +35,8 @@ document.addEventListener("DOMContentLoaded", function () {
 function handleDownloadClick(urls) {
   // Looping through each URL and initiating the download process
   urls.forEach((url) => {
+    alert("Download in progress");
+
     fetch(url)
       .then((response) => response.blob())
       .then((blob) => {
@@ -55,7 +57,6 @@ function handleDownloadClick(urls) {
       })
       .catch((error) => {
         console.error("Error while downloading the video:", error);
-        alert("Failed to download the video");
       });
   });
 }
